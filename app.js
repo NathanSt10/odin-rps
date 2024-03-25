@@ -19,8 +19,28 @@ function getPlayerChoice() {
     return choice[0].toUpperCase() + choice.slice(1);
 }
 
-function playRound(playerChoice, computerChoice) {
+function playerWins(playerChoice, computerChoice) {
+    if (playerChoice === "Rock") {
+        return (computerChoice === "Scissors")
+    }
+    else if (playerChoice === "Paper") {
+        return (computerChoice === "Rock")
+    }
+    else {
+        return (computerChoice === "Paper")
+    }
+}
 
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        return "It's a Draw! You both threw " + playerChoice;
+    }
+    else if (playerWins(playerChoice, computerChoice)) {
+        return "You Win! " + playerChoice + " beats " + computerChoice;
+    }
+    else {
+        return "You Lose! " + computerChoice + " beats " + playerChoice;
+    }
 }
 
 console.log(playRound(getPlayerChoice(), getComputerChoice()));

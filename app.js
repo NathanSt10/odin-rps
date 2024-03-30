@@ -10,11 +10,12 @@ const btnScissors = document.querySelector("#btn-scissors");
 btnScissors.addEventListener("click", () => {playRound("Scissors", getComputerChoice());});
 
 const body = document.querySelector("body");
-const divRoundResult = document.querySelector("#roundResult");
+const divHeader = document.querySelector("#header");
+const divBody = document.querySelector("#body");
 const divButtonContainer = document.querySelector(".button-container");
-const divGameResult = document.querySelector("#gameResult");
 const score = document.querySelector("#score");
-
+const divRoundResult = document.querySelector("#roundResult");
+const divGameResult = document.querySelector("#gameResult");
 
 function getComputerChoice() {
     switch(Math.floor(Math.random() * 3)) {
@@ -60,8 +61,13 @@ function playRound(playerChoice, computerChoice) {
     
     if (playerCount === 5) {
         divGameResult.textContent = "Congrats You Win! " + playerCount + " to " + computerCount + "!";
+        body.removeChild(divHeader);
+        body.removeChild(divBody);
+
     }
     if (computerCount === 5) {
         divGameResult.textContent = "Sorry you lost " + playerCount + " to " + computerCount + ", better luck next time!";
+        body.removeChild(divHeader);
+        body.removeChild(divBody);
     }
 }

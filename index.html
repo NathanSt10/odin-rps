@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="button-container">
-        <button id="btn-rock">Rock</button>
-        <button id="btn-paper">Paper</button>
-        <button id="btn-scissors">Scissors</button>
+    <div id="header">
+        <div>Can you beat the computer?</div>
+        <div>First to 5 wins</div>
     </div>
-    <div id="roundResult"></div>
-    <div id="gameResult"></div>
+    <div id="body">
+        <div class="button-container">
+            <button id="btn-rock">Rock</button>
+            <button id="btn-paper">Paper</button>
+            <button id="btn-scissors">Scissors</button>
+        </div>
+        <div id="score"></div>
+        <div id="roundResult"></div>
+        <div id="gameResult"></div>
+    </div>
+    
 </body>
 </html>
